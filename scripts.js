@@ -2,8 +2,12 @@
 // Описать в html тег input и тег ul. По нажатию на клавишу в инпуте в список ul должен добавляться элемент li. Содержимое li - нажатая клавиша.
 
 const input1 = document.querySelector('input');
+const ul = document.querySelector('ul');
 
 input1.onkeydown = function(event) {
+  const li = document.createElement('li');
+  li.innerText = event.key;
+  ul.appendChild(li);
   console.log(event.key);
 }
 
@@ -12,29 +16,29 @@ input1.onkeydown = function(event) {
 // // Вставить в html теги input и div (просто предусмотреть в разметке).
 // // Обрабатывая событие keyup на теге input, выводить в консоль введенный текст каждый раз, как только клиент вписывает любой символ в поле (или стирает любой символ из поля). Вам понадобится считывать значение поля, это input.value
 
-const input2 = document.querySelector('input');
-const ul = document.querySelector('ul');
+// const input2 = document.querySelector('input');
+// const ul = document.querySelector('ul');
 
-input2.addEventListener('keyup', function() {
-  let li = document.createElement('li');
-  li.innerText = input2.value;
-  ul.appendChild(li);
-});
+// input2.addEventListener('keyup', function() {
+//   let li = document.createElement('li');
+//   li.innerText = input2.value;
+//   ul.appendChild(li);
+// });
 
 
 // Задание 3
 // Создать в html форму с инпутом и кнопкой. Также добавить в html тег ul. Когда форма отправляется, добавлять в список тег li. Его содержимое - введенный текст (input.value). После отправки формы инпут должен быть очищен (проставить пустую строку в value).
 
-const ul = document.querySelector('.main');
-const form = document.querySelector('form');
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const input = form.querySelector('#main');
-  const li = document.createElement('li');
-  li.innerText = input.value;
-  ul.appendChild(li);
-  input.value = '';
-})
+// const ul = document.querySelector('.main');
+// const form = document.querySelector('form');
+// form.addEventListener('submit', (event) => {
+//   event.preventDefault();
+//   const input = form.querySelector('#main');
+//   const li = document.createElement('li');
+//   li.innerText = input.value;
+//   ul.appendChild(li);
+//   input.value = '';
+// })
 
 
 // Задание 4
